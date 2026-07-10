@@ -44,3 +44,6 @@ int tap_write(int fd, uint8_t *buf, int buflen) {
   return n;
 }
 
+void tap_close(int fd){
+  close(fd);
+}
