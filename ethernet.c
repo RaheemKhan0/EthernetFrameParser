@@ -1,4 +1,4 @@
-#include "ehternet.h"
+#include "ethernet.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <arpa/inet.h>
