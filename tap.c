@@ -37,13 +37,11 @@ int tap_read(int fd, uint8_t *buf, int buflen) {
 }
 int tap_write(int fd, uint8_t *buf, int buflen) {
   int n = write(fd, buf, buflen);
-  if (n < 0){
+  if (n < 0) {
     perror("tap write");
     return -1;
   }
   return n;
 }
 
-void tap_close(int fd){
-  close(fd);
-}
+void tap_close(int fd) { close(fd); }
