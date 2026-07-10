@@ -1,3 +1,4 @@
+#include "tap.h"
 #include <fcntl.h> // open, O_RDWR
 #include <linux/if.h>
 #include <linux/if_tun.h>
@@ -30,6 +31,14 @@ int tap_read(int fd, uint8_t *buf, int buflen) {
   int n = read(fd, buf, buflen);
   if (n < 0) {
     perror("tap read");
+    return -1;
+  }
+  return n;
+}
+int tap_write(int fd, uint8_t *buf, int buflen) {
+  int n = write(fd, buf, buflen);
+  if (n < 0){
+    perror("tap write");
     return -1;
   }
   return n;
